@@ -11,11 +11,11 @@ const fetchData = async() => {
 fetchData();
 
 loadCategoryData = (data) => {
-    console.log(data)
+    // console.log(data)
     const categoryContainer = document.getElementById('category-container');
     data.forEach(cat => {
         const catBtn = document.createElement('button');
-        catBtn.classList.add('btn', 'btn-outline', 'capitalize', 'w-full');
+        catBtn.classList.add('btn', 'btn-outline', 'capitalize', 'w-full', 'cat-btn-all');
         catBtn.innerHTML = `
         ${cat.category_name}
         `
@@ -26,7 +26,7 @@ loadCategoryData = (data) => {
 loadAllTree = (data) => {
 const allTreeContainer = document.getElementById('all-tree-container');
 data.forEach(tree => {
-    console.log(tree)
+    // console.log(tree)
     const div = document.createElement('div');
 div.classList.add('card', 'bg-base-100', 'shadow-sm');
 div.innerHTML = `
@@ -46,7 +46,7 @@ div.innerHTML = `
     </div>
     <div class="flex justify-around items-center">
         <p class='font-bold text-xl'>$ <span>${tree.price}</span></p>
-        <button class="btn btn-accent capitalize">cart</button>
+        <button onclick="addToCart()" class="btn btn-accent capitalize">cart</button>
     </div>
 </div>
 </div>
